@@ -1,0 +1,207 @@
+:root {
+    --main-bg-color-header: #131319;
+    --main-font-color: #FBFCFF;
+    --main-accent-color: #ffd33f;
+    --main-accent-dark-color: #383856;
+    --main-accent-red-color: #A4303F;
+    --main-accent-green-color: #678d58;
+    
+    --genre-default: #fd9394;
+    --genre-default-2: #ff0004;
+
+    --genre-action:  #fda2b0 ;
+    --genre-action-2: #A4303F ;
+
+    --genre-indie: #fde7a1 ;
+    --genre-indie-2: #ffd33f;
+
+    --genre-adventure: #d4f7f8;
+    --genre-adventure-2:#91CECE ;
+
+    --genres-role-playing-games-rpg: #fad5a6 ;
+    --genres-role-playing-games-rpg-2: #FFAC3E ;
+
+    --genre-strategy: #b2c5ac ;
+    --genre-strategy-2: #678d58 ;
+
+    --genre-shooter: #fdb895 ;
+    --genre-shooter-2: #F3722C;
+
+    --genre-casual: #a7e6d5;
+    --genre-casual-2: #43AA8B;
+
+    --genre-simulation: #c9a5ba;
+    --genre-simulation-2: #985277;
+
+    --genre-puzzle: #c7deb8 ;
+    --genre-puzzle-2: #90BE6D;
+
+    --genre-arcade: #fabfa4 ;
+    --genre-arcade-2: #F9844A;
+
+    --genre-platformer: #a5c7c7 ;
+    --genre-platformer-2: #4D908E;
+
+    --genre-racing: #acbcca;
+    --genre-racing-2: #577590 ;
+
+    --genre-sports: #fbc791 ;
+    --genre-sports-2: #ff8200  ;
+
+    --genre-massively-multiplayer: #acbcca ;
+    --genre-massively-multiplayer-2: #577590;
+
+    --genre-fighting: #d79ca4 ;
+    --genre-fighting-2: #b23a48;
+
+    --genre-family: #f7e8c6;
+    --genre-family-2: #f4d58d ;
+
+    --genre-board-games: #fcd8d4;
+    --genre-board-games-2: #fcb1a6;
+
+    --genre-educational: #80dcdb;
+    --genre-educational-2: #07beb8;
+
+    --genre-card: #7dd1cb;
+    --genre-card-2: #00a896;
+
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body, html {
+    background-color: var(--main-bg-color-header);
+    color: var(--main-font-color);
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.pageContainer {
+    width: 100%;
+    max-width: 1100px;
+    padding-top: 130px;
+    padding-bottom: 30px;
+    min-height: 100%;
+    margin: auto;
+}
+.game-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#chargement-more-ressources {
+    font-size: 25px;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color:#fff;
+}
+
+#chargement-more-ressources::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;  
+    opacity: .8; 
+    z-index: -1;
+    background-color: var(--main-accent-dark-color);
+}
+  
+#goTop {
+    opacity: 0;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    border-radius:  35px;
+    background-color: var(--main-accent-red-color);
+    z-index: 500;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+#goTop.show {
+    cursor: pointer;
+    opacity: 1;
+}
+
+#goTop:hover {
+    min-width: 35px;
+    width: auto;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#goTop:hover::after {
+    content: 'Haut de la page';
+    width: auto;
+    padding: 5px;
+}
+
+.NoMoreRessources {
+    text-align: center;
+}
+
+#select-genres {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#select-genres-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+
+.select-genres__title {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.optionFilter-genres, .optionFilter-ordering {
+    cursor: pointer;
+}
+
+.optionFilter-genres > div, .optionFilter-ordering > div{
+    transform: scale(1);
+    opacity: 0.55;
+    transition: all 0.5s ease;
+}
+
+.optionFilter-genres > div.active, .optionFilter-ordering > div.active {
+    transform: scale(1.1);
+    opacity: 1;
+    transition: all 0.5s ease;
+}
